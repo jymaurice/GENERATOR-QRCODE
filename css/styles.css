@@ -1,0 +1,23 @@
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .input-group-text {
+    transition: background-color 0.3s;
+  }
+  
+  #qrcode {
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-bottom: 30px;
+    margin: 10px;
+  }
+  
+  .input-group-text:hover {
+    background-color: #f8f9fa;
+  }
+  
+  #qrcode.show {
+    opacity: 1;
+  }

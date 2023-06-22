@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Générateur de QR Code</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Générateur de QR Code</h1>
+    <div class="form-group">
+      <label for="urlInput">URL de destination :</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="urlInput" placeholder="Entrez l'URL" pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fa fa-qrcode"></i>
+          </span>
+        </div>
+      </div>
+      <span id="urlError" class="text-danger"></span>
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="colorInput">Couleur du QR Code :</label>
+        <input type="color" id="colorInput" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="sizeInput">Taille du QR Code :</label>
+        <input type="number" id="sizeInput" class="form-control" min="1" max="500" value="128">
+      </div>
+    </div>
+    
+    <button type="button" class="btn btn-primary" id="generateButton" onclick="generateQRCode()">Générer QR Code</button>
+    <br><br>
+    <div id="qrcode"></div>
+    
+    <div style="margin-top: 10px;">
+      <button type="button" class="btn btn-success" onclick="downloadQRCode()">Télécharger QR Code</button>
+    </div>
+  </div>
+  
+  <script src="js/QRCode.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
